@@ -18,14 +18,7 @@ class WeatherViewController: UIViewController, WeatherView {
             tempLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
         
-        presenter.fetchWeather { result in
-            switch result {
-            case .success(let data):
-                self.setWeather(weatherData: data)
-            case .failure(let error):
-                print(error)
-            }
-        }
+        presenter.showWeather()
     }
     
     func setWeather(weatherData: WeatherData) {
