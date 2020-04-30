@@ -11,12 +11,12 @@ class WeatherPresenter: WeatherViewPresenter {
     }
         
     func showWeather() {
-        WeatherDataService.shared.fetchWeather { result in
+        weatherDataService.fetchWeather(for: "721943") { result in
             switch result {
             case .success(let data):
-                self.view.setWeather(weatherData: data)
+               self.view.setWeather(weatherData: data)
             case .failure(let error):
-                print(error)
+               print(error)
             }
         }
     }
