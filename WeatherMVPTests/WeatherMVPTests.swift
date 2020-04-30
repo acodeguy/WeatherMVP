@@ -1,7 +1,7 @@
 import XCTest
 @testable import WeatherMVP
 
-class WeatherMVPTests: XCTestCase {
+class WeatherDataServiceTests: XCTestCase {
     
     func testWeatherDataServiceReturnsALocationTitle() {
         WeatherDataServiceStub.shared.fetchWeather { result in
