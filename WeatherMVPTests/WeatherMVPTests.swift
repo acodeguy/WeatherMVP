@@ -9,6 +9,7 @@ class WeatherMVPTests: XCTestCase {
             case .success(let data):
                 XCTAssertEqual(data.title, "Rome")
             default:
+                XCTFail()
                 break
                 
             }
