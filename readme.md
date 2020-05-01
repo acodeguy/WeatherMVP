@@ -9,9 +9,18 @@ Models work just as with MVC, no real changes there. They continue to hold the a
 
 In MVP, views are passive; the view controller is now only responsible for its own lifecycle events; it forwards interactions to the Presenter, the Presenter sends back updates to the view.
 
-Using MVP means that the view is now completely de-coupled from the controller (Presenter in this design pattern) and a lot easier to write tests for.
+![Model-View-Presenter layers](https://upload.wikimedia.org/wikipedia/commons/d/dc/Model_View_Presenter_GUI_Design_Pattern.png)
+
+Each concern (Model, View or Presenter) conforms to a protocol that dictates their minimum behaviour. Designing to an interface rather than a concrete implenentation de-couples code, making testing a lot easier. 
 
 ### Model <-|-> Presenter <-|-> View
 
 ## Tests
-Still to come.
+Test doubles are easier to create when each concern conforms to a protocol; just make the test subject's dependencies conform to the same protocol as their real-world counterpart, then stub, fake, mock the necessary parts of it.
+
+Test doubles used:
+
+- `WeatherDataServiceStub`: this returns a fixed sample response from the API
+- `WeatherViewSpy`: spies on wether the View's UI methods were called or not by the Presenter.
+
+Tests can be run by opening Xcode and pressing `Cmd + U`.
