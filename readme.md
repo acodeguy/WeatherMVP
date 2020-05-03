@@ -1,4 +1,4 @@
-# WeeatherMVP
+# WeatherMVP
 ### A weather app built using the MVP design pattern
 
 ## Background
